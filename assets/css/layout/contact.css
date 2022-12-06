@@ -1,0 +1,125 @@
+#contact {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    position: relative;
+}
+.contact__title__section {
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 200px;
+}
+#contact .move__text__inner {
+}
+.contact__title {
+    font-family: var(--font-eng);
+    font-weight: 700;
+    font-size: 200px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-top: 420px;
+}
+#contact .figure__inner {
+}
+#contact .figure {
+    background-color: var(--pc-y);
+    transform: rotate(45deg);
+    position: absolute;
+}
+#contact .star {
+    align-items: center;
+    font-family: var(--font-eng);
+    font-size: 100px;
+    font-weight: 100;
+    color: var(--pc-y);
+    position: absolute;
+    top: 180px;
+    left: 200px;
+}
+#contact .hover__txt {
+    font-family: var(--font-eng);
+    font-size: 35px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--pc-y);
+    position: absolute;
+    top: 200px;
+    left: 520px;
+    transform: rotateZ(-45deg);
+}
+#contact .figure1 {
+    width: 250px;
+    height: 250px;
+    top: 206px;
+    left: 230px;
+}
+#contact .figure2 {
+    width: 334px;
+    height: 334px;
+    top: 477px;
+    left: 310px;
+}
+#contact .figure3 {
+    width: 172px;
+    height: 172px;
+    top: 355px;
+    left: 706px;
+    z-index: -1;
+}
+#contact .figure4 {
+    width: 410px;
+    height: 410px;
+    top: 340px;
+    left: 960px;
+    z-index: -1;
+}
+#contact .figure5 {
+    width: 210px;
+    height: 210px;
+    top: 355px;
+    left: 1440px;
+}
+
+/* contact__address__section */
+.contact__address__section {
+    display: flex;
+    justify-content: space-between;
+}
+.contact__tag{
+    width: 20%;
+    height: 70px;
+    position: relative;
+}
+.contact__tag__txt {
+    font-family: var(--font-eng);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 70px;
+    text-align: center;
+}
+.contact__tag svg {
+    position: absolute;
+    left: 7%;
+    z-index: -1;
+}
+
+.contact__address__section ul {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+.contact__address__section ul li {
+    font-family: var(--font-eng);
+    margin-left: 8%;
+}
+.contact__tag__tit {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--pc-y);
+    margin-bottom: 10px;
+}
+.contact__address__section ul li a {
+    font-size: 24px;
+    font-weight: 400;
+}

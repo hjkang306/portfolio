@@ -1,0 +1,41 @@
+/* 애니메이션 */
+/* animation01 */
+.move__text__inner {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.animation01 {
+  display: inline-block;
+  white-space: nowrap;
+  transform: translateX(0);
+  animation: scrolling 50s linear infinite;
+}
+
+/* rotateY */
+.rotateY {
+  animation: rotateY 2s infinite;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes rotateY {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
