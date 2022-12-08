@@ -15,8 +15,6 @@
     white-space: nowrap;
     margin-top: 22vw;
 }
-.figure__inner {
-}
 
 /* figure */
 #effect .figure {
@@ -83,12 +81,18 @@
 #slider__effect,
 #parallax__effect,
 #game__effect {
-    position: relative;
+    /* position: relative; */
 }
 
 /* effect */
 .effect__section {
-    position: relative;
+    /* position: relative; */
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 56.25vw;
+    background: var(--black);
 }
 .effect__desc {
     width: 19.5vw;

@@ -26,7 +26,7 @@
     <div class="notice">
         <h3 class="notice__tit">check point !</h3>
         <p class="notice__txt">
-            이 페이지는 <span class="point__color">드래그 앤 드롭</span> 기능이 곳곳에 들어있습니다.
+            안녕하세요, 반갑습니다! 이 페이지는 <span class="point__color">드래그 앤 드롭</span> 기능이 곳곳에 들어있습니다.
             재미있는 요소도 많이 숨겨 두었으니, 하나씩 찾아보며 즐겨주세요!
         </p>
         <button class="notice__close" type="button">확인!</button>
@@ -157,11 +157,11 @@
             </div>
             <div class="about__me02__img__inner">
                 <details class="about__me02__img__wrap about__me02__img__wrap01 drag" open>
-                    <summary class="about__me02__img__tit">It’s me!</summary>
+                    <summary class="about__me02__img__tit">It's me!</summary>
                     <img src="assets/img/me04.jpg" alt="내 모습 이미지 04">
                 </details>
                 <details class="about__me02__img__wrap about__me02__img__wrap02 drag" open>
-                    <summary class="about__me02__img__tit">It’s me!</summary>
+                    <summary class="about__me02__img__tit">It's me!</summary>
                     <img src="assets/img/me05.jpg" alt="내 모습 이미지 05">
                 </details>
             </div>
@@ -453,7 +453,9 @@
                             <div class="figureImg"></div>
                         </div>
                     </div>
-                    <img src="assets/img/reactApi.png" alt="리액트 목업 이미지">
+                    <div class="react__img">
+                        <img src="assets/img/reactApi.png" alt="리액트 목업 이미지">
+                    </div>
                 </div>
                 <div class="react__section react__section02">
                 </div>
@@ -487,7 +489,9 @@
                             <div class="figureImg"></div>
                         </div>
                     </div>
-                    <img src="assets/img/vueApi.png" alt="리액트 목업 이미지">
+                    <a href="https://vue-api333.web.app/" target="_blank">
+                        <img src="assets/img/vueApi.png" alt="리액트 목업 이미지">
+                    </a>
                 </div>
                 <div class="vue__section vue__section02">
                 </div>
@@ -521,7 +525,9 @@
                             <div class="figureImg"></div>
                         </div>
                     </div>
-                    <img src="assets/img/phpProject.png" alt="리액트 목업 이미지">
+                    <a href="http://hjkang306.dothome.co.kr/backup/project/php/main/main.php" target="_blank">
+                        <img src="assets/img/phpProject.png" alt="리액트 목업 이미지">
+                    </a>
                 </div>
                 <div class="php__section php__section02">
                 </div>
@@ -539,15 +545,15 @@
             <div class="figure__inner">
                 <div class="star rotateY">*</div>
                 <div class="hover__txt">thank you !</div>
-                <div class="figure figure1"></div>
-                <div class="figure figure2"></div>
-                <div class="figure figure3"></div>
-                <div class="figure figure4"></div>
-                <div class="figure figure5"></div>
+                <div class="figure figure1 headShake"></div>
+                <div class="figure figure2 headShake"></div>
+                <div class="figure figure3 headShake"></div>
+                <div class="figure figure4 headShake"></div>
+                <div class="figure figure5 headShake"></div>
             </div>
         </div>
         <div class="contact__address__section container">
-            <div class="contact__tag">
+            <div class="contact__tag tada">
                 <svg
                     width="279"
                     height="70"
@@ -592,6 +598,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+    <script src="https://assets.codepen.io/16327/ScrollToPlugin3.min.js"></script>
     <script src="assets/js/color.js"></script>
     <script>
       $(".drag").draggable({ opacity: 0.8 });
@@ -602,25 +609,38 @@
         const notice = document.querySelector(".notice");
         const noticeClose = document.querySelector(".notice__close");
 
-        onload = (event) => {
-            setTimeout(()=>{
-                notice.classList.add("show");
-            }, 2500)
-        }
-
         noticeClose.addEventListener("click", () => {
             notice.classList.remove("show");
             document.body.classList.remove("fixed")
         })
+
+        // 새로고침하면 스크롤 맨 위로
+        window.onload = function(){
+            setTimeout(function(){
+                scrollTo(0,0);
+            }, 100);
+            setTimeout(()=>{
+                notice.classList.add("show");
+            }, 2500);
+        }
     </script>
 
     <!-- cursor -->
     <!-- <script>
         const cursor = document.querySelector(".mouse__cursor");
-        window.addEventListener("mousemove", e => {
-            // GSAP
-            cursorMove(e)
-        });
+        const effectWindow = document.querySelectorAll(".effect__img__wrap");
+        effectWindow.forEach( effect => {
+            effect.addEventListener("mousemove", e => {
+                // GSAP
+                cursorMove(e)
+            });
+            effect.addEventListener("mouseenter", () => {
+                cursor.classList.add("show");
+            });
+            effect.addEventListener("mouseleave", () => {
+                cursor.classList.remove("show");
+            });
+        })
         function cursorMove(e) {
             gsap.to(cursor, {duration: 0.3, left: e.pageX -5, top: e.pageY -5});
             requestAnimationFrame(cursorMove);
@@ -629,38 +649,40 @@
 
     <!-- scroll -->
     <script>
-      const aboutImg = document.querySelectorAll(".about__me01__img");
-      const about = document.querySelector("#about");
-      const aboutMe01 = document.querySelector(".about__me01");
-      let aboutTop = aboutMe01.getBoundingClientRect();
-      console.log(aboutTop)
+    gsap.registerPlugin(ScrollTrigger);
+
+    const aboutImg = document.querySelectorAll(".about__me01__img");
+    const about = document.querySelector("#about");
+    const aboutMe01 = document.querySelector(".about__me01");
+    let aboutTop = aboutMe01.getBoundingClientRect();
+    // console.log(aboutTop)
       
 
-      let scrollTop = 0;
-      // 스크롤 값
-      function scroll() {
-            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            document.querySelector(".scrollTop").innerText = Math.ceil(scrollTop);
-            requestAnimationFrame(scroll);
+    let scrollTop = 0;
+    // 스크롤 값 + 이미지 바뀌기
+    function scroll() {
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        document.querySelector(".scrollTop").innerText = Math.ceil(scrollTop);
+        requestAnimationFrame(scroll);
 
-            if (scrollTop > 2900 && scrollTop < 3500){
-                aboutImg.forEach(e => {
-                    e.classList.remove("show");
-                });
-                aboutImg[1].classList.add("show");
-            } else if (scrollTop >= 3500) {
-                aboutImg.forEach(e => {
-                    e.classList.remove("show");
-                });
-                aboutImg[2].classList.add("show");
-            } else {
-                aboutImg.forEach(e => {
-                    e.classList.remove("show");
-                });
-                aboutImg[0].classList.add("show");
-            }
-      }
-      scroll();
+        if (scrollTop > 2900 && scrollTop < 3500){
+            aboutImg.forEach(e => {
+                e.classList.remove("show");
+            });
+            aboutImg[1].classList.add("show");
+        } else if (scrollTop >= 3500) {
+            aboutImg.forEach(e => {
+                e.classList.remove("show");
+            });
+            aboutImg[2].classList.add("show");
+        } else {
+            aboutImg.forEach(e => {
+                e.classList.remove("show");
+            });
+            aboutImg[0].classList.add("show");
+        }
+    }
+    scroll();
 
     // 스무스
     const fixCheckIn = setInterval(() => {
@@ -668,7 +690,6 @@
     }, 1000);
     function fixCheck(){
         if($("body").hasClass("fixed") === false) {
-            console.log("yes")
             clearInterval(fixCheckIn);
             const lenis = new Lenis({
                 duration: 1.2,
@@ -680,51 +701,164 @@
                 requestAnimationFrame(raf);
             }
             requestAnimationFrame(raf);
-        } else {
-            console.log("no")
         }
     }
 
-      // gsap
-      gsap.registerPlugin(ScrollTrigger);
+    // 피규어 이질감
+    gsap.set("#effect .figure1", { yPercent: 50});
+    gsap.set("#effect .figure3", { yPercent: 50});
+    gsap.set("#effect .figure5", { yPercent: 50});
+    gsap.set("#effect .figure7", { yPercent: 50});
 
-      const sections01 = gsap.utils.toArray(".react__section");
-      const sections02 = gsap.utils.toArray(".vue__section");
-      const sections03 = gsap.utils.toArray(".php__section");
+    gsap.to("#effect .figure1", {
+        yPercent: -70,
+        ease: "power4",
+        scrollTrigger: {
+            trigger: "#effect",
+            scrub: 1
+        }, 
+    });
+    gsap.to("#effect .figure3", {
+        yPercent: -70,
+        ease: "power4",
+        scrollTrigger: {
+            trigger: "#effect",
+            scrub: 1
+        }, 
+    });
+    gsap.to("#effect .figure5", {
+        yPercent: -70,
+        ease: "power4",
+        scrollTrigger: {
+            trigger: "#effect",
+            scrub: 1
+        }, 
+    });
+    gsap.to("#effect .figure7", {
+        yPercent: -70,
+        ease: "power4",
+        scrollTrigger: {
+            trigger: "#effect",
+            scrub: 1
+        }, 
+    });
 
-      gsap.to(sections01, {
-          xPercent: -100 * (sections01.length -1),
-          ease: "none",
-          scrollTrigger: {
-              trigger: ".react__wrap",
-              pin: true,
-              scrub: 1,
-              end: "+=4000",
-              markers: true,
-          }
-      });
-      gsap.to(sections02, {
-          xPercent: -100 * (sections02.length -1),
-          ease: "none",
-          scrollTrigger: {
-              trigger: ".vue__wrap",
-              pin: true,
-              scrub: 1,
-              end: "+=4000",
-              markers: true,
-          }
-      });
-      gsap.to(sections03, {
-          xPercent: -100 * (sections03.length -1),
-          ease: "none",
-          scrollTrigger: {
-              trigger: ".php__wrap",
-              pin: true,
-              scrub: 1,
-              end: "+=4000",
-              markers: true,
-          }
-      });
+    gsap.set("#about .figure1", { yPercent: 50});
+    gsap.set("#about .figure3", { yPercent: 50});
+    gsap.set("#about .figure5", { yPercent: 50});
+    gsap.set("#about .figure7", { yPercent: 50});
+
+    gsap.to("#about .figure1", {
+        yPercent: -70,
+        ease: "power4",
+        scrollTrigger: {
+            trigger: "#about",
+            scrub: 1
+        }, 
+    });
+    gsap.to("#about .figure3", {
+        yPercent: -70,
+        ease: "power4",
+        scrollTrigger: {
+            trigger: "#about",
+            scrub: 1
+        }, 
+    });
+    gsap.to("#about .figure5", {
+        yPercent: -70,
+        ease: "power4",
+        scrollTrigger: {
+            trigger: "#about",
+            scrub: 1
+        }, 
+    });
+    gsap.to("#about .figure7", {
+        yPercent: -70,
+        ease: "power4",
+        scrollTrigger: {
+            trigger: "#about",
+            scrub: 1
+        }, 
+    });
+
+    // 명언
+    gsap.set(".about__me02__text__desc", { opacity: 0, yPercent: 100});
+    gsap.to(".about__me02__text__desc", {
+        opacity: 1,
+        yPercent: 0,
+        ease: "power4.easeInOut",
+        scrollTrigger: {
+            trigger: ".about__me02__text",
+            scrub: 1,
+        }
+    });
+
+    // gsap 가로
+    const sections01 = gsap.utils.toArray(".react__section");
+    const sections02 = gsap.utils.toArray(".vue__section");
+    const sections03 = gsap.utils.toArray(".php__section");
+
+    gsap.to(sections01, {
+        xPercent: -100 * (sections01.length -1),
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".react__wrap",
+            pin: true,
+            scrub: 1,
+            end: "+=4000",
+            markers: true,
+        }
+    });
+    gsap.to(sections02, {
+        xPercent: -100 * (sections02.length -1),
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".vue__wrap",
+            pin: true,
+            scrub: 1,
+            end: "+=4000",
+            markers: true,
+        }
+    });
+    gsap.to(sections03, {
+        xPercent: -100 * (sections03.length -1),
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".php__wrap",
+            pin: true,
+            scrub: 1,
+            end: "+=4000",
+            markers: true,
+        }
+    });
+    </script>
+
+    <!-- effect gsap -->
+    <!-- <script>
+        gsap.utils.toArray(".effect__section").forEach((panel, i) => {
+            ScrollTrigger.create({
+                trigger: panel,
+                start: "top top", 
+                pin: true, 
+                pinSpacing: false 
+            });
+        });
+    </script> -->
+
+    <!-- 모양 -->
+    <script>
+        const homeFigure = document.querySelectorAll("#home .figure");
+        let moyang = ["", "circle", "water"];
+        let mNum = 0;
+        // setInterval(() => {
+        //     homeFigure.forEach(e => {
+        //         e.classList.remove("circle");
+        //         e.classList.remove("water");
+        //         // e.classList.add(moyang[mNum%3]);
+        //     });
+        //     console.log(moyang[mNum%3])
+        //     mNum++;
+        // }, 3000)
     </script>
   </body>
 </html>
