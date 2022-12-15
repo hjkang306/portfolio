@@ -231,11 +231,6 @@
 }
 
 @media (max-width: 970px){
-    .effect__desc {
-        width: 25vw;
-    }
-}
-@media (max-width: 770px){
     .effect__title {
         font-size: 20vw;
     }
@@ -275,12 +270,12 @@
         left: 41.6vw;
     }
     .effect__decos {
-        top: 35vw;
+        top: 35vh;
     }
     .effect__desc {
         width: 100%;
         font-size: 3vw;
-        padding-top: 20vw;
+        padding-top: 10vh;
         margin-bottom: 10vw;
     }
     .effect__img__wrap {
@@ -312,4 +307,3 @@
         margin-top: 0.3vw;
     }
 }
-

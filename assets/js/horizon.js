@@ -45,8 +45,8 @@ mm.add("(min-width: 1201px)", () => {
 // 1200px 이하에서 실행하는 gsap
 mm2.add("(max-width: 1200px)", () => {
     // react
-    const reactFiguresE = gsap.utils.toArray("#react .figure:nth-child(even)");
-    const reactFiguresO = gsap.utils.toArray("#react .figure:nth-child(odd)");
+    const reactFiguresE = gsap.utils.toArray("#react .figure.right");
+    const reactFiguresO = gsap.utils.toArray("#react .figure.left");
     gsap.set("#react .vertical__tit", {yPercent: 100,opacity: 0});
     gsap.to("#react .vertical__tit", {
         yPercent: -10,
@@ -74,8 +74,8 @@ mm2.add("(max-width: 1200px)", () => {
     });
 
     // vue
-    const vueFiguresE = gsap.utils.toArray("#vue .figure:nth-child(even)");
-    const vueFiguresO = gsap.utils.toArray("#vue .figure:nth-child(odd)");
+    const vueFiguresE = gsap.utils.toArray("#vue .figure.right");
+    const vueFiguresO = gsap.utils.toArray("#vue .figure.left");
     gsap.set("#vue .vertical__tit", {yPercent: 100,opacity: 0});
     gsap.to("#vue .vertical__tit", {
         yPercent: -10,
@@ -103,8 +103,8 @@ mm2.add("(max-width: 1200px)", () => {
     });
 
     // php
-    const phpFiguresE = gsap.utils.toArray("#php .figure:nth-child(even)");
-    const phpFiguresO = gsap.utils.toArray("#php .figure:nth-child(odd)");
+    const phpFiguresE = gsap.utils.toArray("#php .figure.right");
+    const phpFiguresO = gsap.utils.toArray("#php .figure.left");
     gsap.set("#php .vertical__tit", {yPercent: 100,opacity: 0});
     gsap.to("#php .vertical__tit", {
         yPercent: -10,

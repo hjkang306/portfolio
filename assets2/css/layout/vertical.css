@@ -1,7 +1,19 @@
 @media(max-width: 1200px){
+    .react__section__inner,
+    .vue__section__inner,
+    .php__section__inner {
+        display: contents;
+        width: 100vw;
+        height: auto;
+    }
+    .react__section,
+    .vue__section,
+    .php__section {
+        height: auto;
+    }
     .site {
         margin-bottom: 20vw;
-        overflow-x: hidden;
+        /* overflow-x: hidden; */
     }
     .site .move__text__inner {
         display: none;
@@ -25,45 +37,62 @@
         border-radius: 50%;
         margin-left: 10vw;
         position: relative;
+        position: static;
     }
-    .site .figure:nth-child(odd) {
+    .site .figure.right {
         margin-left: 30vw;
+    }
+    .site .figure.empty {
+        display: none;
     }
     .site .figure a {
         display: inline-block;
+        width: 22vw;
         height: 8vw;
         background: inherit;
-        border-top-left-radius: 5vw;
-        border-bottom-left-radius: 5vw;
         color: transparent;
         font-size: 2vw;
         text-align: center;
         line-height: 8vw;
         position: absolute;
+    }
+
+    .site .figure.left a.page__btn {transform: translate(-80%, -100%);}
+    .site .figure.left a.source__btn {transform: translate(-80%, 50%);}
+    .site .figure.right a.page__btn {transform: translate(80%, -100%);}
+    .site .figure.right a.source__btn {transform: translate(80%, 50%);}
+
+    .site .figure.right a {
+        border-top-right-radius:0;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 5vw;
+        border-bottom-left-radius: 5vw;
+        text-align-last: left;
         padding-left: 3vw;
-        padding-right: 10vw;
         top: 50%;
         left: 0;
         transform: translate(0, 0) scaleX(0);
     }
-    .site .figure:nth-child(even) a {
+    .site .figure.left a {
         border-top-left-radius:0;
         border-bottom-left-radius: 0;
         border-top-right-radius: 5vw;
         border-bottom-right-radius: 5vw;
-        padding-left: 10vw;
         padding-right: 3vw;
+        text-align: right;
+        top: 50%;
         left: auto;
         right: 0;
+        transform: translate(0, 0) scaleX(0);
     }
     .site .figure a.page__btn {transition: all 0.3s cubic-bezier(0.42, 0.05, 0, 0.93);}
     .site .figure a.source__btn {transition: all 0.5s cubic-bezier(0.42, 0.05, 0, 0.93);}
     .site .figure:hover a {color: var(--white); transform: scaleX(1);}
     .site .figure a:hover {text-decoration: underline; text-underline-offset: 0.7vw;}
-    .site .figure:hover a.page__btn {transform: translate(-89%, -85%);}
-    .site .figure:hover a.source__btn {transform: translate(-89%, 25%);}
-    .site .figure:nth-child(even):hover a.page__btn {transform: translate(89%, -85%);}
-    .site .figure:nth-child(even):hover a.source__btn {transform: translate(89%, 25%);}
+    .site .figure.right:hover a.page__btn {transform: translate(-89%, -85%);}
+    .site .figure.right:hover a.source__btn {transform: translate(-89%, 25%);}
+    .site .figure.left:hover a.page__btn {transform: translate(89%, -85%);}
+    .site .figure.left:hover a.source__btn {transform: translate(89%, 25%);}
     
     /* figureImg */
     .site .figureImg {
@@ -72,6 +101,7 @@
         border-radius: 50%;
         transform: scale(0);
         transition: all 0.3s;
+        z-index: 1;
     }
     .site .figure:hover .figureImg {
         transform: scale(0.9);
@@ -116,7 +146,7 @@
     }
 }
 
-@media(max-width: 900px){
+@media(max-width: 700px){
     .site .figure .figureImg {
         transform: scale(0.9);
     }
@@ -125,8 +155,8 @@
         font-size: 3vw;
         transform: scaleX(1);
     }
-    .site .figure a.page__btn {transform: translate(-89%, -85%);}
-    .site .figure a.source__btn {transform: translate(-89%, 25%);}
-    .site .figure:nth-child(even) a.page__btn {transform: translate(89%, -85%);}
-    .site .figure:nth-child(even) a.source__btn {transform: translate(89%, 25%);}
+    .site .figure.right a.page__btn {transform: translate(-89%, -85%);}
+    .site .figure.right a.source__btn {transform: translate(-89%, 25%);}
+    .site .figure.left a.page__btn {transform: translate(89%, -85%);}
+    .site .figure.left a.source__btn {transform: translate(89%, 25%);}
 }

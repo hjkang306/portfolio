@@ -92,8 +92,8 @@ gsap.set("#contact .move__text__inner", { y: 200, opacity: 0 });
 let tl = gsap.timeline({
     scrollTrigger:{
             trigger: "#contact .figure__inner",
-            start: "bottom center",
-            end: "bottom 10%",
+            start: "top center",
+            end: "top 10%",
             scrub: 4,
             // markers: true
         }
