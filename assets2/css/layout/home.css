@@ -58,7 +58,7 @@
   transition: border-radius .2s;
 }
 #home .figure1 .sunglass {
-  background: url('../../img/sunglass.png') no-repeat center / contain;
+  background: url('../../../assets/img/sunglass.png') no-repeat center / contain;
   width: 10vw;
   height: 3vw;
   position: absolute;
