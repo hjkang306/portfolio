@@ -114,7 +114,7 @@ mm2.add("(max-width: 1200px)", () => {
         xPercent: 70,
         scale: 1.2,
         scrollTrigger: {
-            trigger: ".#php .figure__inner",
+            trigger: "#php .figure__inner",
             scrub: 1,
         },
     });
@@ -122,7 +122,7 @@ mm2.add("(max-width: 1200px)", () => {
         xPercent: -40,
         scale: 1.2,
         scrollTrigger: {
-            trigger: ".#php .figure__inner",
+            trigger: "#php .figure__inner",
             scrub: 1,
         },
     });
