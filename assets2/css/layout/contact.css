@@ -165,7 +165,7 @@
     text-underline-offset: 0.5vw;
 }
 
-@media(max-width: 900px){
+@media(max-width: 1200px){
     #footer {}
     .contact__address__section {
         height: auto;
@@ -203,9 +203,6 @@
     .contact__address__section ul li a {
         font-size: 2.8vw;
     }
-}
-
-@media (max-width: 770px){
     #contact .figure__inner {
       height: 65vw;
     }

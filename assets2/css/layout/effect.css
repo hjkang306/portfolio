@@ -98,24 +98,29 @@
     height: 100vh;
     background: var(--black);
     padding: 0 10vw;
-    padding-top: calc(30vh - 30vw);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.effect__section .left {
+    width: 30%;
+    position: relative;
 }
 .effect__desc {
-    width: 19.5vw;
+    width: 100%;
     font-size: 1.2vw;
     font-weight: 300;
     line-height: 1.4;
     text-align: justify;
-    padding-top: 10vw;
     margin-bottom: 15vw;
 }
 .effect__tit {
     font-family: var(--font-eng);
     font-size: 4vw;
     font-weight: 400;
-    position: absolute;
-    z-index: 2;
     mix-blend-mode: difference;
+    position: relative;
+    z-index: 1;
 }
 .effect__tit em {
     text-transform: uppercase;
@@ -127,10 +132,9 @@
     font-size: 1.5vw;
     font-weight: 400;
     text-transform: uppercase;
-    position: relative;
     position: absolute;
-    top: 4vw;
-    right: 0;
+    top: -10%;
+    left: 90vw;
 }
 
 /* .effect__deco */
@@ -180,10 +184,7 @@
 
 /* effect img wrap */
 .effect__img__wrap {
-    width: 50%;
-    position: absolute;
-    top: 10vw;
-    right: 10vw;
+    width: 60%;
     border: 3px solid var(--white);
 }
 .effect__img__tit {
@@ -230,7 +231,19 @@
     transform: rotateZ(3600deg);
 }
 
-@media (max-width: 970px){
+@media (max-width: 1200px){
+    .effect__title__section {
+        overflow: visible;
+    }
+    .effect__section {
+        flex-wrap: wrap;
+        align-content: center;
+    }
+    .effect__section .left {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
     .effect__title {
         font-size: 20vw;
     }
@@ -270,13 +283,13 @@
         left: 41.6vw;
     }
     .effect__decos {
-        top: 35vh;
+        display: none;
     }
     .effect__desc {
         width: 100%;
         font-size: 3vw;
-        padding-top: 10vh;
-        margin-bottom: 10vw;
+        padding-top: 5vw;
+        margin-bottom: 5vw;
     }
     .effect__img__wrap {
         position: static !important;
@@ -286,7 +299,8 @@
         font-family: var(--font-eng);
         font-size: 4vw;
         position: static;
-        margin-top: 8vw;
+        margin-top: 5vw;
+        mix-blend-mode: normal;
     }
     .effect__img__wrap a .effect__btn {
         opacity: 1;

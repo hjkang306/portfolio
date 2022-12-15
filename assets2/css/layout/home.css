@@ -108,7 +108,7 @@
   left: 75vw;
 }
 
-@media (max-width: 770px){
+@media (max-width: 900px){
   #home .figure__inner {
     height: 65vw;
   }

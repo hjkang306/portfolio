@@ -52,7 +52,7 @@ mm2.add("(max-width: 1200px)", () => {
         yPercent: -10,
         opacity: 1,
         scrollTrigger: {
-            trigger: ".react__section__inner",
+            trigger: "#react",
             scrub: 1,
         },
     });
@@ -81,7 +81,7 @@ mm2.add("(max-width: 1200px)", () => {
         yPercent: -10,
         opacity: 1,
         scrollTrigger: {
-            trigger: ".vue__section__inner",
+            trigger: "#vue",
             scrub: 1,
         },
     });
@@ -110,7 +110,7 @@ mm2.add("(max-width: 1200px)", () => {
         yPercent: -10,
         opacity: 1,
         scrollTrigger: {
-            trigger: ".php__section__inner",
+            trigger: "#php",
             scrub: 1,
         },
     });
