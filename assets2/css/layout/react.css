@@ -1,0 +1,222 @@
+#react {
+}
+.react__section__inner {
+    overscroll-behavior: none;
+    width: 350vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+.react__section {
+    width: 350vw;
+    height: 100vh;
+}
+.react__section .move__text__inner {
+    margin-top: 25vh;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.8;
+    mix-blend-mode: lighten;
+}
+.react__section__tit {
+    font-family: var(--font-eng);
+    font-size: 800px;
+    font-weight: 400;
+    letter-spacing: -0.05em;
+}
+
+/* figure__inner */
+.react__section .figure__inner {
+}
+.react__section .figure {
+    position: relative;
+    border-radius: 50%;
+    background-color: var(--pc-y);
+    position: absolute;
+}
+
+/* btn */
+.react__section .figure a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2vw;
+}
+.react__section .figure:hover a {
+    color: var(--white);
+    transform: scale(1);
+}
+.react__section .figure a {
+    font-family: var(--font-eng);
+    font-weight: 700;
+    width: 150px;
+    height: 150px;
+    /* max-width: 150px;
+    max-height: 150px; */
+    font-size: 1.4vw;
+    text-align: center;
+    line-height: 150px;
+    color: transparent;
+    text-transform: uppercase;
+    background-color: inherit;
+    border-radius: 50%;
+    position: absolute;
+    transform: scale(0);
+}
+.react__section .figure .page__btn {
+    transition: all 0.3s cubic-bezier(0.87,-0.04, 0.45, 1);
+}
+.react__section .figure .source__btn {
+    transition: all 0.2s cubic-bezier(0.87,-0.04, 0.45, 1);
+}
+/* figure1 */
+.react__section .figure1 .page__btn {transform: translate(100%, 100%);}
+.react__section .figure1:hover .page__btn {transform: translate(-30%, 30%);}
+.react__section .figure1 .source__btn {transform: translate(100%, 130%);}
+.react__section .figure1:hover .source__btn {transform: translate(-70%, 130%);}
+/* figure3 */
+.react__section .figure3 .page__btn {transform: translate(100%, 300%);}
+.react__section .figure3:hover .page__btn {transform: translate(-20%, 400%);}
+.react__section .figure3 .source__btn {transform: translate(100%, 200%);}
+.react__section .figure3:hover .source__btn {transform: translate(-70%, 310%);}
+/* figure6 */
+.react__section .figure6 .page__btn {transform: translate(100%, 100%);}
+.react__section .figure6:hover .page__btn {transform: translate(-10%, 40%);}
+.react__section .figure6 .source__btn {transform: translate(100%, 130%);}
+.react__section .figure6:hover .source__btn {transform: translate(-60%, 130%);}
+/* figure7 */
+.react__section .figure7 .page__btn {transform: translate(250%, 100%);}
+.react__section .figure7:hover .page__btn {transform: translate(320%, 0%);}
+.react__section .figure7 .source__btn {transform: translate(250%, 130%);}
+.react__section .figure7:hover .source__btn {transform: translate(370%, 100%);}
+
+
+/* img */
+.react__section .figure .figureImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-position: center center;
+    background-size: contain;
+    position: absolute;
+    transform: scale(0);
+    transition: all .3s cubic-bezier(0.87,-0.04, 0.45, 1);
+}
+
+/* figure */
+.react__section .figure:hover .figureImg {
+    transform: scale(0.9);
+}
+.react__section .figure1 .figureImg {
+    background-image: url(../../../assets/img/react01-min.jpg);
+}
+.react__section .figure3 .figureImg {
+    background-image: url(../../../assets/img/react02-min.jpg);
+}
+.react__section .figure6 .figureImg {
+    background-image: url(../../../assets/img/react03-min.jpg);
+}
+.react__section .figure7 .figureImg {
+    background-image: url(../../../assets/img/react04-min.jpg);
+}
+
+.react__section .figure1 {
+    width: 740px;
+    height: 740px;
+    top: 56px;
+    left: 20vw;
+}
+.react__section .figure2 {
+    width: 516px;
+    height: 516px;
+    top: 394px;
+    left: 75vw;
+    z-index: 1;
+}
+.react__section .figure3 {
+    width: 817px;
+    height: 817px;
+    top: -126px;
+    left: 120vw;
+    z-index: 1;
+}
+.react__section .figure4 {
+    width: 530px;
+    height: 530px;
+    top: 718px;
+    left: 160vw;
+}
+.react__section .figure5 {
+    width: 390px;
+    height: 390px;
+    top: 404px;
+    left: 185vw;
+}
+.react__section .figure6 {
+    width: 915px;
+    height: 915px;
+    top: 56px;
+    left: 240vw;
+    z-index: 1;
+}
+.react__section .figure7 {
+    width: 583px;
+    height: 583px;
+    top: 477px;
+    left: 290vw;
+    z-index: 1;
+}
+
+/* img */
+.react__img__inner {
+    width: 100vw;
+    font-family: var(--font-ko1);
+    position: absolute;
+    bottom: 20vw;
+    left: 350vw;
+    z-index: 1;
+}
+.react__desc {
+    opacity: 0;
+    margin: 0 auto;
+    width: 48%;
+    word-break: keep-all;
+    margin-top: 6.6vw;
+    padding: 10vw 8vw 8vw;
+    transform: translateX(3.2%);
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.829);
+    transition: all 0.3s;
+}
+.react__desc:hover {
+    opacity: 1;
+}
+.react__txt {
+    font-size: 2vw;
+    line-height: 1.4;
+    margin-bottom: 2vw;
+}
+.react__desc a {
+    display: block;
+    text-align: right;
+    font-size: 1vw;
+    color: var(--white);
+}
+.react__desc a:last-child {
+    margin-top: 0.5vw;
+}
+.react__desc a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.3vw;
+}
+.react__img__inner img {
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+
+/* react__section02 */
+.react__section02 {
+}

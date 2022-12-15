@@ -1,0 +1,214 @@
+#header {
+  width: 100%;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+}
+.header__inner {
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+}
+.details__inner {
+  width: 33%;
+}
+
+details summary::marker {
+  display: none;
+  content: "";
+}
+details > summary::after {
+    content: 'v';
+    text-transform: lowercase;
+    font-size: 1vw;
+    line-height: 1;
+    float: right;
+    margin-top: 0.2vw;
+}
+details[open] > summary::after {
+  content: '-';
+  font-size: 1.3vw;
+}
+
+/* color */
+.color__menu {
+  width: 10vw;
+  border: 3px solid var(--white);
+  box-sizing: border-box;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 10;
+  pointer-events: all;
+}
+.color__menu summary {
+  border-bottom: 3px solid var(--white);
+}
+.color__menu:hover summary {
+  background: var(--black);
+  color: var(--white);
+}
+.color__menu[open]:hover summary {
+  border-bottom: 3px solid var(--white);
+}
+.color__menu summary {
+  background: var(--white);
+  padding: 0.5vw 1.3vw;
+  font-family: var(--font-eng);
+  color: var(--black);
+  align-items: center;
+  font-size: 1.2vw;
+  font-weight: 700;
+}
+.color__menu ul {
+  padding: 30px;
+  font-family: var(--font-eng);
+  font-weight: 700;
+  font-size: 1.2vw;
+}
+.color__menu ul li {
+  margin-top: 30px;
+  cursor: pointer;
+}
+.color__menu ul li.active:nth-child(1) {color: var(--pc-r);}
+.color__menu ul li.active:nth-child(2) {color: var(--pc-o);}
+.color__menu ul li.active:nth-child(3) {color: var(--pc-y);}
+.color__menu ul li.active:nth-child(4) {color: var(--pc-g);}
+.color__menu ul li.active:nth-child(5) {color: var(--pc-b);}
+.color__menu ul li.active:nth-child(6) {color: var(--pc-p);}
+
+.color__menu ul li:first-child {
+  margin-top: 0;
+}
+
+/* logo */
+.logo {
+  pointer-events: all;
+}
+.logo a {
+  height: 3.6vw;
+}
+.logo a svg {
+  width: 10vw;
+  height: 3.6vw;
+}
+
+/* nav */
+.navigation {
+  float: right;
+  width: 12vw;
+  border: 3px solid var(--white);
+  box-sizing: border-box;
+  text-transform: uppercase;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  pointer-events: all;
+}
+.navigation summary {
+  border-bottom: 3px solid var(--white);
+}
+.navigation:hover summary {
+  background: var(--black);
+  color: var(--white);
+}
+.navigation[open]:hover summary {
+  border-bottom: 3px solid var(--white);
+}
+.navigation summary {
+  background: var(--white);
+  padding: 0.5vw 1.3vw;
+  font-family: var(--font-eng);
+  color: var(--black);
+  align-items: center;
+  font-size: 1.2vw;
+  font-weight: 700;
+}
+.navigation ul {
+  padding: 30px;
+  font-family: var(--font-eng);
+  font-weight: 700;
+  font-size: 1.2vw;
+}
+.navigation ul li {
+  margin-top: 30px;
+}
+.navigation ul li:first-child {
+  margin-top: 0;
+}
+.navigation ul li a {
+  position: relative;
+}
+.navigation ul li a::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: -0.2vw;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.navigation ul li:hover a::after {
+  width: 100%; 
+  left: 0; 
+}
+.navigation ul li.active a::after {
+  width: 100%; 
+  left: 0; 
+}
+
+@media (max-width: 1200px){
+  .color__menu {
+    width: 13vw;
+  }
+  .navigation {
+    width: 15vw;
+  }
+}
+
+@media (max-width: 900px){
+  .details__inner:first-child {
+    display: none;
+  }
+  .details__inner:last-child {
+    width: auto;
+  }
+  .logo a svg {
+    width: auto;
+    height: 6vw;
+  }
+  .navigation {
+    width: 25vw;
+  }
+  .navigation ul {
+    font-size: 3vw;
+    padding: 3vw;
+  }
+  .navigation summary {
+    font-size: 3vw;
+  }
+  details > summary::after {
+    content: 'v';
+    text-transform: lowercase;
+    font-size: 2vw;
+    line-height: 1;
+    float: right;
+    margin-top: 0.5vw;
+  }
+  details[open] > summary::after {
+    content: '-';
+    font-size: 2vw;
+  }
+  .navigation ul li {
+    margin-top: 2.5vw;
+  }
+  .navigation ul li:first-child {
+    margin-top: 0;
+  }
+  
+}

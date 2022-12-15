@@ -1,0 +1,141 @@
+/* 애니메이션 */
+/* animation01 */
+.move__text__inner {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.animation01 {
+  display: inline-block;
+  white-space: nowrap;
+  transform: translateX(0);
+  animation: scrolling 50s linear infinite;
+}
+
+/* rotateY */
+.rotateY {
+  animation: rotateY 2s infinite;
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes rotateY {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* tada */
+.tada:hover {
+  animation: tada .5s;
+}
+
+@keyframes tada {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%,
+  20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%,
+  60%,
+  80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* headShake */
+.headShake:hover {
+  animation: headShake .5s ease-in-out infinite;
+}
+
+@keyframes headShake {
+  0% {
+    transform: translateX(0) rotateZ(45deg);
+  }
+
+  6.5% {
+    transform: translateX(-6px) rotateZ(45deg);
+  }
+
+  18.5% {
+    transform: translateX(5px) rotateZ(45deg);
+  }
+
+  31.5% {
+    transform: translateX(-3px) rotateZ(45deg);
+  }
+
+  43.5% {
+    transform: translateX(2px) rotateZ(45deg);
+  }
+
+  50% {
+    transform: translateX(0) rotateZ(45deg);
+  }
+}
+
+/* loader */
+.loader {
+  position: absolute;
+  margin: -18px 0 0 -18px;
+  border: 3.6px solid #ff974d;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 36px;
+  height: 36px;
+  left: 50%;
+  top: 50%;
+  animation: loader-spin 2s linear infinite reverse;
+  filter: url(#goo);
+  box-shadow: 0 0 0 1px #ff974d inset;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  animation: loader-spin 2s cubic-bezier(0.59, 0.25, 0.4, 0.69) infinite;
+  background: #ff974d;
+  transform-origin: top center;
+  border-radius: 50%;
+  width: 150%;
+  height: 150%;
+  top: 50%;
+  left: -12.5%;
+}
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
