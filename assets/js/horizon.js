@@ -1,5 +1,7 @@
 let mm = gsap.matchMedia();
 let mm2 = gsap.matchMedia();
+
+// 1200px 초과시 실행하는 gsap
 mm.add("(min-width: 1201px)", () => {
     const react = document.querySelector(".react__section");
     const vue = document.querySelector(".vue__section");
@@ -39,6 +41,8 @@ mm.add("(min-width: 1201px)", () => {
         },
     });
 });
+
+// 1200px 이하에서 실행하는 gsap
 mm2.add("(max-width: 1200px)", () => {
     // react
     const reactFiguresE = gsap.utils.toArray("#react .figure:nth-child(even)");
