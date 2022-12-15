@@ -40,6 +40,7 @@ mm.add("(min-width: 1201px)", () => {
     });
 });
 mm2.add("(max-width: 1200px)", () => {
+    // react
     const reactFiguresE = gsap.utils.toArray("#react .figure:nth-child(even)");
     const reactFiguresO = gsap.utils.toArray("#react .figure:nth-child(odd)");
     gsap.set("#react .vertical__tit", {yPercent: 100,opacity: 0});
@@ -55,7 +56,7 @@ mm2.add("(max-width: 1200px)", () => {
         xPercent: 70,
         scale: 1.2,
         scrollTrigger: {
-            trigger: "#react .react__figure__inner",
+            trigger: ".react__figure__inner",
             scrub: 1,
         },
     });
@@ -63,93 +64,65 @@ mm2.add("(max-width: 1200px)", () => {
         xPercent: -40,
         scale: 1.2,
         scrollTrigger: {
-            trigger: "#react2 .vertical__figure__inner",
+            trigger: ".react__figure__inner",
             scrub: 1,
         },
     });
 
     // vue
-    gsap.set("#vue2 .vertical__section__inner .vertical__tit", {yPercent: 100,opacity: 0});
-    gsap.to("#vue2 .vertical__section__inner .vertical__tit", {
+    const vueFiguresE = gsap.utils.toArray("#vue .figure:nth-child(even)");
+    const vueFiguresO = gsap.utils.toArray("#vue .figure:nth-child(odd)");
+    gsap.set("#vue .vertical__tit", {yPercent: 100,opacity: 0});
+    gsap.to("#vue .vertical__tit", {
         yPercent: -10,
         opacity: 1,
         scrollTrigger: {
-            trigger: "#vue2 .vertical__section__inner",
+            trigger: ".vue__section__inner",
             scrub: 1,
         },
     });
-    gsap.to("#vue2 .vertical__figure__inner .figure1", {
+    gsap.to(vueFiguresE, {
         xPercent: 70,
         scale: 1.2,
         scrollTrigger: {
-            trigger: "#vue2 .vertical__figure__inner",
+            trigger: ".vue__figure__inner",
             scrub: 1,
         },
     });
-    gsap.to("#vue2 .vertical__figure__inner .figure2", {
+    gsap.to(vueFiguresO, {
         xPercent: -40,
         scale: 1.2,
         scrollTrigger: {
-            trigger: "#vue2 .vertical__figure__inner",
-            scrub: 1,
-        },
-    });
-    gsap.to("#vue2 .vertical__figure__inner .figure3", {
-        xPercent: 50,
-        scale: 1.2,
-        scrollTrigger: {
-            trigger: "#vue2 .vertical__figure__inner",
-            scrub: 1,
-        },
-    });
-    gsap.to("#vue2 .vertical__figure__inner .figure4", {
-        xPercent: -25,
-        scale: 1.2,
-        scrollTrigger: {
-            trigger: "#vue2 .vertical__figure__inner",
+            trigger: ".vue__figure__inner",
             scrub: 1,
         },
     });
 
     // php
-    gsap.set("#php2 .vertical__section__inner .vertical__tit", {yPercent: 100,opacity: 0});
-    gsap.to("#php2 .vertical__section__inner .vertical__tit", {
+    const phpFiguresE = gsap.utils.toArray("#php .figure:nth-child(even)");
+    const phpFiguresO = gsap.utils.toArray("#php .figure:nth-child(odd)");
+    gsap.set("#php .vertical__tit", {yPercent: 100,opacity: 0});
+    gsap.to("#php .vertical__tit", {
         yPercent: -10,
         opacity: 1,
         scrollTrigger: {
-            trigger: "#php2 .vertical__section__inner",
+            trigger: ".php__section__inner",
             scrub: 1,
         },
     });
-    gsap.to("#php2 .vertical__figure__inner .figure1", {
+    gsap.to(phpFiguresE, {
         xPercent: 70,
         scale: 1.2,
         scrollTrigger: {
-            trigger: "#php2 .vertical__figure__inner",
+            trigger: ".php__figure__inner",
             scrub: 1,
         },
     });
-    gsap.to("#php2 .vertical__figure__inner .figure2", {
+    gsap.to(phpFiguresO, {
         xPercent: -40,
         scale: 1.2,
         scrollTrigger: {
-            trigger: "#php2 .vertical__figure__inner",
-            scrub: 1,
-        },
-    });
-    gsap.to("#php2 .vertical__figure__inner .figure3", {
-        xPercent: 50,
-        scale: 1.2,
-        scrollTrigger: {
-            trigger: "#php2 .vertical__figure__inner",
-            scrub: 1,
-        },
-    });
-    gsap.to("#php2 .vertical__figure__inner .figure4", {
-        xPercent: -25,
-        scale: 1.2,
-        scrollTrigger: {
-            trigger: "#php2 .vertical__figure__inner",
+            trigger: ".php__figure__inner",
             scrub: 1,
         },
     });
