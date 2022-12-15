@@ -56,7 +56,7 @@ mm2.add("(max-width: 1200px)", () => {
         xPercent: 70,
         scale: 1.2,
         scrollTrigger: {
-            trigger: ".react__figure__inner",
+            trigger: "#react .figure__inner",
             scrub: 1,
         },
     });
@@ -64,7 +64,7 @@ mm2.add("(max-width: 1200px)", () => {
         xPercent: -40,
         scale: 1.2,
         scrollTrigger: {
-            trigger: ".react__figure__inner",
+            trigger: "#react .figure__inner",
             scrub: 1,
         },
     });
@@ -85,7 +85,7 @@ mm2.add("(max-width: 1200px)", () => {
         xPercent: 70,
         scale: 1.2,
         scrollTrigger: {
-            trigger: ".vue__figure__inner",
+            trigger: "#vue .figure__inner",
             scrub: 1,
         },
     });
@@ -93,7 +93,7 @@ mm2.add("(max-width: 1200px)", () => {
         xPercent: -40,
         scale: 1.2,
         scrollTrigger: {
-            trigger: ".vue__figure__inner",
+            trigger: "#vue .figure__inner",
             scrub: 1,
         },
     });
@@ -114,7 +114,7 @@ mm2.add("(max-width: 1200px)", () => {
         xPercent: 70,
         scale: 1.2,
         scrollTrigger: {
-            trigger: ".php__figure__inner",
+            trigger: ".#php .figure__inner",
             scrub: 1,
         },
     });
@@ -122,7 +122,7 @@ mm2.add("(max-width: 1200px)", () => {
         xPercent: -40,
         scale: 1.2,
         scrollTrigger: {
-            trigger: ".php__figure__inner",
+            trigger: ".#php .figure__inner",
             scrub: 1,
         },
     });
