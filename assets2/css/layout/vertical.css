@@ -109,10 +109,11 @@
 
     /* site__img__inner */
     .site__img__inner {
-        position: relative;
-        margin-top: 20vw;
+        display: none;
+        /* position: relative;
+        margin-top: 20vw; */
     }
-    .site__img__inner > div:hover {
+    /* .site__img__inner > div:hover {
         opacity: 1;
     }
     .site__img__inner > div {
@@ -143,7 +144,7 @@
     .site__img__inner > div a:hover {
         text-decoration: underline;
         text-underline-offset: 0.6vw;
-    }
+    } */
 }
 
 @media(max-width: 700px){
