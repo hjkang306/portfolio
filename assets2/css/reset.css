@@ -190,3 +190,11 @@ button {
     line-height: 0;
     text-indent: -9999px;
 }
+.ir_so {
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
